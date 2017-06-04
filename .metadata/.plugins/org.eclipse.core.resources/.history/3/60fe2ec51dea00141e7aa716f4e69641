@@ -1,0 +1,125 @@
+# view res/layout/arc_activity.xml #generated:8
+# view res/layout/basicmap_activity.xml #generated:2
+# view res/layout/busline_activity.xml #generated:43
+# view res/layout/camera_activity.xml #generated:109
+# view res/layout/circle_activity.xml #generated:50
+# view res/layout/events_activity.xml #generated:23
+# view res/layout/geocoder_activity.xml #generated:21
+# view res/layout/groundoverlay_activity.xml #generated:2
+# view res/layout/heatmap_activity.xml #generated:2
+# view res/layout/layers_activity.xml #generated:6
+# view res/layout/locationmodesource_activity.xml #generated:7
+# view res/layout/locationsensorsource_activity.xml #generated:7
+# view res/layout/locationsource_activity.xml #generated:7
+# view res/layout/marker_activity.xml #generated:17
+# view res/layout/opengl_activity.xml #generated:2
+# view res/layout/poiclick_activity.xml #generated:2
+# view res/layout/polygon_activity.xml #generated:43
+# view res/layout/polyline_activity.xml #generated:49
+# view res/layout/route_activity.xml #generated:126
+# view res/layout/screenshot_activity.xml #generated:20
+# view res/layout/tileoverlay_activity.xml #generated:36
+# view res/layout/ui_settings_activity.xml #generated:7
+-keep class com.amap.api.maps.MapView { <init>(...); }
+
+# view res/layout/basemap_fragment_activity.xml #generated:2
+# view res/layout/poiaroundsearch_activity.xml #generated:53
+# view res/layout/poikeywordsearch_activity.xml #generated:64
+-keep class com.amap.api.maps.SupportMapFragment { <init>(...); }
+
+# view AndroidManifest.xml #generated:41
+-keep class com.amap.map3d.demo.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:52
+-keep class com.amap.map3d.demo.basic.BaseMapFragmentActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:48
+-keep class com.amap.map3d.demo.basic.BasicMapActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:56
+-keep class com.amap.map3d.demo.basic.CameraActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:64
+-keep class com.amap.map3d.demo.basic.EventsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:60
+-keep class com.amap.map3d.demo.basic.HeatMapActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:68
+-keep class com.amap.map3d.demo.basic.LayersActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:76
+-keep class com.amap.map3d.demo.basic.MapOptionActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:84
+-keep class com.amap.map3d.demo.basic.OpenglActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:72
+-keep class com.amap.map3d.demo.basic.PoiClickActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:80
+-keep class com.amap.map3d.demo.basic.ScreenShotActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:88
+-keep class com.amap.map3d.demo.basic.UiSettingsActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:148
+-keep class com.amap.map3d.demo.busline.BuslineActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:164
+-keep class com.amap.map3d.demo.district.DistrictActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:140
+-keep class com.amap.map3d.demo.geocoder.GeocoderActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:132
+-keep class com.amap.map3d.demo.location.LocationGPSActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:128
+-keep class com.amap.map3d.demo.location.LocationModeSourceActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:136
+-keep class com.amap.map3d.demo.location.LocationNetworkActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:124
+-keep class com.amap.map3d.demo.location.LocationSensorSourceActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:120
+-keep class com.amap.map3d.demo.location.LocationSourceActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:160
+-keep class com.amap.map3d.demo.offlinemap.OfflineMapActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:100
+-keep class com.amap.map3d.demo.overlay.ArcActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:112
+-keep class com.amap.map3d.demo.overlay.CircleActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:104
+-keep class com.amap.map3d.demo.overlay.GroundOverlayActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:92
+-keep class com.amap.map3d.demo.overlay.MarkerActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:116
+-keep class com.amap.map3d.demo.overlay.NavigateArrowOverlayActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:108
+-keep class com.amap.map3d.demo.overlay.PolygonActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:96
+-keep class com.amap.map3d.demo.overlay.PolylineActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:156
+-keep class com.amap.map3d.demo.poisearch.PoiAroundSearchActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:152
+-keep class com.amap.map3d.demo.poisearch.PoiKeywordSearchActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:144
+-keep class com.amap.map3d.demo.route.RouteActivity { <init>(...); }
+
+# onClick res/layout/screenshot_activity.xml #generated:12
+-keepclassmembers class * { *** getMapScreenShot(...); }
+

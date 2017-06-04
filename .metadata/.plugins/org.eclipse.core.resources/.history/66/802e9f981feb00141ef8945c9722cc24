@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/li"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:padding="10dp"
+     >
+    <TextView
+        android:id="@+id/menu_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:padding="10dip"
+        android:textColor="#FFC125"
+        android:textSize="15dp" />
+    <TextView
+        android:id="@+id/menu_text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_gravity="top"
+        android:padding="10dip"
+        android:textSize="20dp" />
+    <ImageView
+        android:id="@+id/item_menu_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         android:gravity="left"
+         android:layout_marginLeft="10dp"
+       />
+
+   <RelativeLayout
+        android:id="@+id/rt"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:textColor="#EAEAEA"
+            android:textSize="10sp"/>
+  <LinearLayout
+            android:id="@+id/li2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:padding="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+     >
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/textView2"
+            android:id="@+id/ima2"      
+            />
+</LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

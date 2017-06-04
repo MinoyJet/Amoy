@@ -1,0 +1,52 @@
+/**  
+ * GalleryAdapter.java
+ * @version 1.0
+ * @author Haven
+ * @createTime 2011-12-9 ÏÂÎç05:04:34
+ */
+package com.example.beta5;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.BaseAdapter;
+import android.widget.Gallery;
+
+public class GalleryAdapter extends BaseAdapter {
+
+	private Context context;
+	private int images[] = { R.drawable.chrysanthemum, R.drawable.desert, R.drawable.hydrangeas,R.drawable.penguins};
+
+	public GalleryAdapter(Context context) {
+		this.context = context;
+	}
+
+	@Override
+	public int getCount() {
+		return images.length;
+	}
+
+	@Override
+	public Object getItem(int position) {
+		return null;
+	}
+
+	@Override
+	public long getItemId(int position) {
+		return 0;
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		
+		Bitmap bmp = BitmapFactory.decodeResource(context.getResources(), GalleryAdapter.this);
+		MyImageView view = new MyImageView(context, bmp.getWidth(), bmp.getHeight());
+		view.setLayoutParams(new Gallery.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+		view.setImageBitmap(bmp);
+		return view;
+	}
+
+}

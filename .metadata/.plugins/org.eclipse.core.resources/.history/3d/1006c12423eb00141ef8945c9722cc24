@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ 
+    android:orientation="vertical" 
+    android:background="#FFFFFF">
+    
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/xian" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/imageView1"
+            android:text="游客身份" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="11dp"
+            android:background="@drawable/yonghuyouke" />
+
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+
+            android:layout_marginRight="67dp"
+            android:src="@drawable/pinglunnn" />
+
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="22dp"
+            android:src="@drawable/tiezia" />
+
+    </RelativeLayout>
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+           android:orientation="vertical"
+        android:padding="10dp">
+    <LinearLayout 
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        >
+        
+         <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/daoyoutx1"
+        android:textSize="15sp"
+        android:textColor="#FFC125"
+        android:text="鼓浪屿"/>
+    <TextView 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/daoyoutx2"
+       android:padding="10dp"
+       android:textSize="20dp"
+       android:text="一杯午后的茶，一缕海的风"/>
+    <ImageView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageview"/>
+    <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+android:padding="10dp"
+android:textSize="15dp"
+        android:id="@+id/daoyoutx3"
+        android:text="跟着心走，一起去鼓浪屿"/>
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/aixin"
+        android:layout_gravity="right"
+        android:layout_marginRight="50dp"/>
+    <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="      下辖的一个街道。原名圆沙洲别名圆州仔.明朝改称鼓浪屿。因岛西南一方海滩上有一块两米多高，中有洞穴的礁石，每当涨潮水涌，浪击礁石，声似鼓浪，人们称鼓浪石，鼓浪屿因而出名。鼓浪屿街道短小，纵横交错，是厦门最大的一个卫星岛，岛上石岩峥嵘，挺拔雄秀，因常年受海浪扑打，形成许多幽谷和峭崖，沙滩，礁石，峭壁，岩峰。"
+        android:layout_marginTop="10dp"
+        android:id="@+id/daoyoutx5"/>
+    <ImageView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/xian"/>   
+        
+    </LinearLayout>
+    </ScrollView>
+      <ListView
+
+        android:id="@+id/tiezilistinbuju"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout1"
+        android:divider="#EEEEEE"
+        android:dividerHeight="5dp" 
+        >
+      
+   </ListView>
+        
+
+</LinearLayout>

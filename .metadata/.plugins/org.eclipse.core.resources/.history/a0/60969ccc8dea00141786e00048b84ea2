@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.beta5"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+  
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" 
+        >
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="63af34bddf7bcdcc0ce4386835d25625"/>
+  
+        <activity
+            android:name="com.example.beta5.Appstart"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+			android:windowSoftInputMode="stateAlwaysHidden"
+			 >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity 
+            android:name="com.example.beta5.MainActivity"
+            ></activity>
+        <activity 
+            android:name="com.example.beta5.login"></activity>
+        <activity 
+            android:name="com.example.beta5.zhuce"></activity>
+       <activity 
+           android:name="com.example.beta5.gz"></activity>
+       <activity 
+           android:name="com.example.beta5.dy"></activity>
+       <activity android:name="com.example.beta5.dh"></activity>
+       <activity android:name="com.example.beta5.sq"></activity>
+       <activity android:name="com.example.beta5.dy_next"></activity>
+       <activity android:name="com.example.beta5.dy_test"></activity>
+       <activity android:name="com.example.beta5.GalleryActivity"></activity>
+       <activity 
+           android:name="com.zijunlin.Zxing.Demo.CaptureActivity"
+           ></activity>
+    </application>
+<uses-permission android:name="android.permission.CAMERA"></uses-permission>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+	<uses-feature android:name="android.hardware.camera" />
+	<uses-feature android:name="android.hardware.camera.autofocus" />
+	<uses-permission android:name="android.permission.VIBRATE"/>
+  	<uses-permission android:name="android.permission.FLASHLIGHT"/>
+</manifest>

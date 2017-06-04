@@ -1,0 +1,177 @@
+package com.example.beta5;
+
+import java.util.ArrayList;
+
+import android.app.TabActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TabHost;
+import android.widget.TabHost.TabSpec;
+import android.widget.Toast;
+
+@SuppressWarnings("deprecation")
+public class MainActivity extends TabActivity {
+	 private TabHost tabHost;  
+	 private Boolean bl=false;
+	    private static final String gaizhang= "盖章";    
+	    private static final String daohang= "导航";    
+	    private static final String daoyou = "导游";  
+	    private static final String shequ = "社区";      
+	    //内容Intent  
+	    private Intent gzIntent;  
+	    private Intent dhIntent;  
+	    private Intent dyIntent;  
+	    private Intent sqIntent; 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Intent intent=this.getIntent();
+		String strGetMsg=intent.getStringExtra("msg"); 		 
+        Toast toast =Toast.makeText(this, strGetMsg,Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0, 250);
+        toast.show();
+        setContentView(R.layout.tabhost);
+        tabHost=this.getTabHost();
+        tabHost.setFocusable(true);  
+        prepareIntent();  
+        setupIntent();       
+     
+    }
+    private void setupIntent(){  
+        tabHost.addTab(buildTabSpec(gaizhang,R.drawable.gaizhang, gzIntent));  
+        tabHost.addTab(buildTabSpec(daohang,R.drawable.daohang, dhIntent));  
+        tabHost.addTab(buildTabSpec(daoyou,R.drawable.daoyou, dyIntent));  
+        tabHost.addTab(buildTabSpec(shequ,R.drawable.shequ, sqIntent));   
+    }  
+  
+    private TabSpec buildTabSpec(String tag, int icon, Intent intent) {  
+        View view = View.inflate(MainActivity.this, R.layout.tab, null);  
+        ((ImageView)view.findViewById(R.id.tab_iv_icon)).setImageResource(icon);   
+        return tabHost.newTabSpec(tag)  
+                .setIndicator(view)  
+                .setContent(intent);  
+    }  
+  
+    private void prepareIntent() {  
+        gzIntent=new Intent(MainActivity.this, gz.class);  
+        dhIntent=new Intent(MainActivity.this, dh.class);  
+        dyIntent=new Intent(MainActivity.this, dy.class);  
+        sqIntent=new Intent(MainActivity.this,sq.class);  
+         
+    }  
+ 
+
+}
+
+class tiezi{
+	String image=new String();
+	String text=new String();
+	String person=new String();
+	tiezi(String ima,String ps,String tx){
+		image=ima;
+		person=ps;
+		text=tx;
+	}
+}
+
+class resourse{
+	ArrayList<String> text1=new ArrayList<String>();
+	ArrayList<String> text2=new ArrayList<String>();
+	ArrayList<String> text3=new ArrayList<String>();
+	ArrayList<String> text4=new ArrayList<String>();
+	ArrayList<String> text5=new ArrayList<String>();
+	ArrayList<String> ima1=new ArrayList<String>();
+	ArrayList<String> ima2=new ArrayList<String>();
+	ArrayList<String> in1=new ArrayList<String>();
+	ArrayList<ArrayList<tiezi>> tz=new ArrayList<ArrayList<tiezi>>();
+
+	public void add(String t1,String t2,String t3,String t4,String t5,String im1,String im2,String in,ArrayList<tiezi> ti){
+	text1.add(t1);
+	text2.add(t2);
+	text3.add(t3);
+	text4.add(t4);
+	text5.add(t5);
+	ima1.add(im1);
+	ima2.add(im2);
+	tz.add(ti);
+	in1.add(in);
+	
+	}
+}
+	
+
+//与数据库交互的类
+class getresourse{
+	 resourse re=new resourse();
+	 resourse re2=new resourse();
+	
+	 String t1=new String();
+	 String t2=new String();
+	 String t3=new String();
+	 String t4=new String();
+	 String t5=new String();
+	 String im1=new String();
+	 String im2=new String();;
+	 ArrayList<tiezi> ti=new ArrayList<tiezi>();
+	 
+	getresourse(){
+		
+		tiezi z1=new tiezi("add", "王力宏", "鼓浪屿真好");
+		ti.add(z1);
+		z1=new tiezi("add", "林依晨", "啊哈哈哈");
+		ti.add(z1);
+		z1=new tiezi("add", "黄晓明", "好漂亮的小岛啊");
+		ti.add(z1);		
+		t1="鼓浪屿";t2="一杯午后的茶，一缕海的风晨曦";t3="跟着心走，一起去寻找鼓浪屿";t4="30";t5="下辖的一个街道。原名圆沙洲别名圆州仔.明朝改称鼓浪屿。因岛西南一方海滩上有一块两米多高，中有洞穴的礁石，每当涨潮水涌，浪击礁石，声似鼓浪，人们称鼓浪石，鼓浪屿因而出名。鼓浪屿街道短小，纵横交错，是厦门最大的一个卫星岛，岛上石岩峥嵘，挺拔雄秀，因常年受海浪扑打，形成许多幽谷和峭崖，沙滩，礁石，峭壁，岩峰。";im1="bddfhd";im2="aixin";
+		re.add(t1, t2, t3, t4, t5,im1,im2,"no",ti);
+		
+		z1=new tiezi("add", "王力宏", "鼓浪屿真好");
+		ti.add(z1);
+	    z1=new tiezi("add", "林依晨", "啊哈哈哈");
+		ti.add(z1);
+        z1=new tiezi("add", "黄晓明", "好漂亮的小岛啊");
+		ti.add(z1);		
+		t1="日光岩";t2="一如初生般的温暖";t3="一方小岛，寻一处世外桃源";t4="40";t5="下辖的一个街道。原名圆沙洲别名圆州仔.明朝改称鼓浪屿。因岛西南一方海滩上有一块两米多高，中有洞穴的礁石，每当涨潮水涌，浪击礁石，声似鼓浪，人们称鼓浪石，鼓浪屿因而出名。鼓浪屿街道短小，纵横交错，是厦门最大的一个卫星岛，岛上石岩峥嵘，挺拔雄秀，因常年受海浪扑打，形成许多幽谷和峭崖，沙滩，礁石，峭壁，岩峰。";im1="sdvds";im2="aixin";
+		re.add(t1, t2, t3, t4, t5,im1,im2,"no",ti);
+		
+		z1=new tiezi("add", "王力宏", "鼓浪屿真好");
+		ti.add(z1);
+		z1=new tiezi("add", "林依晨", "啊哈哈哈");
+		ti.add(z1);
+		z1=new tiezi("add", "黄晓明", "好漂亮的小岛啊");
+		ti.add(z1);		
+		t1="钢琴博物馆";t2="临海听涛，琴声依然";t3="听见海的声音";t4="20";t5="下辖的一个街道。原名圆沙洲别名圆州仔.明朝改称鼓浪屿。因岛西南一方海滩上有一块两米多高，中有洞穴的礁石，每当涨潮水涌，浪击礁石，声似鼓浪，人们称鼓浪石，鼓浪屿因而出名。鼓浪屿街道短小，纵横交错，是厦门最大的一个卫星岛，岛上石岩峥嵘，挺拔雄秀，因常年受海浪扑打，形成许多幽谷和峭崖，沙滩，礁石，峭壁，岩峰。";im1="fdvgdf";im2="aixin";
+		re.add(t1, t2, t3, t4, t5,im1,im2,"no",ti);
+		
+		 z1=new tiezi("add", "王力宏", "鼓浪屿真好");
+		ti.add(z1);
+		z1=new tiezi("add", "林依晨", "啊哈哈哈");
+		ti.add(z1);
+		z1=new tiezi("add", "黄晓明", "好漂亮的小岛啊");
+		ti.add(z1);		
+		t1="鼓浪屿";t2="一杯午后的茶，一缕海的风晨曦";t3="跟着心走，一起去寻找鼓浪屿";t4="30";t5="下辖的一个街道。原名圆沙洲别名圆州仔.明朝改称鼓浪屿。因岛西南一方海滩上有一块两米多高，中有洞穴的礁石，每当涨潮水涌，浪击礁石，声似鼓浪，人们称鼓浪石，鼓浪屿因而出名。鼓浪屿街道短小，纵横交错，是厦门最大的一个卫星岛，岛上石岩峥嵘，挺拔雄秀，因常年受海浪扑打，形成许多幽谷和峭崖，沙滩，礁石，峭壁，岩峰。";im1="bddfhd";im2="aixin";
+		re2.add(t1, t2, t3, t4, t5,im1,im2,"no",ti);
+		
+		z1=new tiezi("add", "王力宏", "鼓浪屿真好");
+		ti.add(z1);
+	    z1=new tiezi("add", "林依晨", "啊哈哈哈");
+		ti.add(z1);
+        z1=new tiezi("add", "黄晓明", "好漂亮的小岛啊");
+		ti.add(z1);		
+		t1="日光岩";t2="一如初生般的温暖";t3="一方小岛，寻一处世外桃源";t4="40";t5="下辖的一个街道。原名圆沙洲别名圆州仔.明朝改称鼓浪屿。因岛西南一方海滩上有一块两米多高，中有洞穴的礁石，每当涨潮水涌，浪击礁石，声似鼓浪，人们称鼓浪石，鼓浪屿因而出名。鼓浪屿街道短小，纵横交错，是厦门最大的一个卫星岛，岛上石岩峥嵘，挺拔雄秀，因常年受海浪扑打，形成许多幽谷和峭崖，沙滩，礁石，峭壁，岩峰。";im1="sdvds";im2="aixin";
+		re2.add(t1, t2, t3, t4, t5,im1,im2,"no",ti);
+		
+		z1=new tiezi("add", "王力宏", "鼓浪屿真好");
+		ti.add(z1);
+		z1=new tiezi("add", "林依晨", "啊哈哈哈");
+		ti.add(z1);
+		z1=new tiezi("add", "黄晓明", "好漂亮的小岛啊");
+		ti.add(z1);		
+		t1="钢琴博物馆";t2="临海听涛，琴声依然";t3="听见海的声音";t4="20";t5="下辖的一个街道。原名圆沙洲别名圆州仔.明朝改称鼓浪屿。因岛西南一方海滩上有一块两米多高，中有洞穴的礁石，每当涨潮水涌，浪击礁石，声似鼓浪，人们称鼓浪石，鼓浪屿因而出名。鼓浪屿街道短小，纵横交错，是厦门最大的一个卫星岛，岛上石岩峥嵘，挺拔雄秀，因常年受海浪扑打，形成许多幽谷和峭崖，沙滩，礁石，峭壁，岩峰。";im1="fdvgdf";im2="aixin";
+		re2.add(t1, t2, t3, t4, t5,im1,im2,"no",ti);
+		
+	}
+}

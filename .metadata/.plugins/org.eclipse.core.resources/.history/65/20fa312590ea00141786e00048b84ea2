@@ -1,0 +1,69 @@
+package com.example.beta5;
+
+import android.app.TabActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TabHost;
+import android.widget.Toast;
+import android.widget.TabHost.TabSpec;
+
+@SuppressWarnings("deprecation")
+public class MainActivity extends TabActivity {
+	 private TabHost tabHost;  
+	 private Boolean bl=false;
+	    private static final String gaizhang= "盖章";    
+	    private static final String daohang= "导航";    
+	    private static final String daoyou = "导游";  
+	    private static final String shequ = "社区";      
+	    //内容Intent  
+	    private Intent gzIntent;  
+	    private Intent dhIntent;  
+	    private Intent dyIntent;  
+	    private Intent sqIntent; 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Intent intent=this.getIntent();
+		String strGetMsg=intent.getStringExtra("msg"); 
+		if (bl) 
+		 
+			Toast.makeText(this, strGetMsg,Toast.LENGTH_LONG).show();;
+		 bl=true;
+        setContentView(R.layout.tabhost);
+        tabHost=this.getTabHost();
+        tabHost.setFocusable(true);  
+        prepareIntent();  
+        setupIntent();       
+     
+    }
+    private void setupIntent(){  
+        tabHost.addTab(buildTabSpec(gaizhang,R.drawable.gaizhang, gzIntent));  
+        tabHost.addTab(buildTabSpec(daohang,R.drawable.daohang, dhIntent));  
+        tabHost.addTab(buildTabSpec(daoyou,R.drawable.daoyou, dyIntent));  
+        tabHost.addTab(buildTabSpec(shequ,R.drawable.shequ, sqIntent));   
+    }  
+  
+    private TabSpec buildTabSpec(String tag, int icon, Intent intent) {  
+        View view = View.inflate(MainActivity.this, R.layout.tab, null);  
+        ((ImageView)view.findViewById(R.id.tab_iv_icon)).setImageResource(icon);   
+        return tabHost.newTabSpec(tag)  
+                .setIndicator(view)  
+                .setContent(intent);  
+    }  
+  
+    private void prepareIntent() {  
+        gzIntent=new Intent(MainActivity.this, gz.class);  
+        dhIntent=new Intent(MainActivity.this, dh.class);  
+        dyIntent=new Intent(MainActivity.this, dy.class);  
+        sqIntent=new Intent(MainActivity.this,sq.class);  
+         
+    }  
+private void msg()
+{
+	
+}
+
+
+}

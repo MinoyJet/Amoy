@@ -1,0 +1,50 @@
+package com.example.beta5;
+
+import java.util.HashMap;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class dy_next extends Activity{
+	HashMap<String, String>map=new HashMap<String, String>();
+    String string=new String();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.dy_image);
+        map.put("bddfhd","sdvds");
+    	map.put("sdvds", "fdvgdf");
+    	map.put("fdvgdf", "sdvds");
+
+         Intent it=getIntent();
+         string=it.getStringExtra("image");
+	      
+         ImageView iv=(ImageView)findViewById(R.id.imageview);
+         TextView tx=(TextView)findViewById(R.id.textview);
+         tx.setText(string);
+         iv.setImageDrawable(getResources().getDrawable(getResources().getIdentifier(string,"drawable", getPackageName())));
+         
+         iv.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent inten=new Intent();
+			      inten.putExtra("image", string);
+			      inten.setClass(dy_next.this, GalleryActivity.class);
+			      startActivity(inten);
+				
+			}
+		});
+    
+    
+    
+    }
+       
+}

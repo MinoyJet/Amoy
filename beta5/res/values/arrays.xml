@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array 
+        name="txet1">
+        <item >鼓浪屿</item>
+        <item >日光岩</item>
+        <item >钢琴博物馆</item>
+    </string-array>
+     <string-array 
+        name="txet2">
+        <item >一杯午后的茶，一缕海的风</item>
+        <item >晨曦，一如初生般的温暖</item>
+        <item >临海听涛，琴声依然</item>
+    </string-array>
+      <string-array 
+        name="txet3">
+        <item >跟着心走，一起去寻找鼓浪屿</item>
+        <item >一方小岛，寻一处世外桃源</item>
+        <item >听见海的声音</item>
+    </string-array>
+    <string-array name="text4">
+        <item >30</item>
+        <item >20</item>
+        <item >40</item>
+    </string-array>
+<string-array name="ima">
+        <item >bddfhd</item>
+        <item >sdvds</item>
+        <item >fdvgdf</item>
+    </string-array>
+</resources>

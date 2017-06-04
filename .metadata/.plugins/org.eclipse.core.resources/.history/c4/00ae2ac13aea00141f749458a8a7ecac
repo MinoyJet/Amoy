@@ -1,0 +1,132 @@
+package com.example.beta5;
+
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+public class dy extends Activity{
+	String text1[]={"鼓浪屿","日光岩","钢琴博物馆"};
+	String text2[]={"一杯午后的茶，一缕海的风晨曦","一如初生般的温暖","临海听涛，琴声依然"};
+	String text3[]={"跟着心走，一起去寻找鼓浪屿","一方小岛，寻一处世外桃源","听见海的声音"};
+	String text4[]={"30","40","20"};
+	String ima[]={"bddfhd","sdvds","fdvgdf"};
+    String ima3[]={"aixin","aixin","aixin"};
+    int isClick[]={0,0,0};
+																				
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState){
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.dy);
+	PullToRefreshListView list=(PullToRefreshListView)findViewById(R.id.list);
+	BaseAdapter ba=new BaseAdapter() {
+		@Override
+		public View getView(int arg0, View arg1, ViewGroup arg2) {
+			// TODO Auto-generated method stub
+			View view = View.inflate(dy.this, R.layout.dy_test, null);   	
+			LinearLayout li=(LinearLayout)view.findViewById(R.id.li);
+			TextView t1=(TextView)view.findViewById(R.id.menu_text);
+			TextView t2=(TextView)view.findViewById(R.id.menu_text2);
+			TextView t3=(TextView)view.findViewById(R.id.textView1);
+            TextView t4=(TextView)view.findViewById(R.id.textView2);
+			ImageView i1=(ImageView)view.findViewById(R.id.item_menu_line);
+			ImageView i2=(ImageView)view.findViewById(R.id.ima2);
+			i1.setImageDrawable(getResources().getDrawable(getResources().getIdentifier(ima[arg0],"drawable", getPackageName())));
+			i2.setImageDrawable(getResources().getDrawable(getResources().getIdentifier(ima3[arg0],"drawable", getPackageName())));
+			t1.setText(text1[arg0]);t2.setText(text2[arg0]);t3.setText(text3[arg0]);t4.setText(text4[arg0]);	
+			
+			return li;
+		}
+		
+		@Override
+		public long getItemId(int arg0) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+		
+		@Override
+		public Object getItem(int arg0) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			
+			return text1.length;
+		}
+	};
+	list.setAdapter(ba);
+	list.setOnItemClickListener(new OnItemClickListener()
+	{
+
+		int id;	
+	 @Override
+	 public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+	            long arg3)
+	    {
+	    	
+	      TextView tx=(TextView)arg1.findViewById(R.id.textView2);
+	      ImageView iv=(ImageView)arg1.findViewById(R.id.ima2);
+	      ImageView iv2=(ImageView)arg1.findViewById(R.id.item_menu_line);
+	      RelativeLayout rt=(RelativeLayout)arg1.findViewById(R.id.rt);
+	      TextView t1=(TextView)arg1.findViewById(R.id.menu_text);
+	      LinearLayout li2=(LinearLayout)arg1.findViewById(R.id.li2);
+	      int x;
+	      id=arg2;
+	      li2.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View arg0, MotionEvent arg1) {
+				// TODO Auto-generated method stub
+				if(ima3[id]=="aixin")
+					ima3[id]="aixindianxiaqu";
+				else ima3[id]="aixin";
+				isClick[id]=1;
+				return false;
+			}
+		});
+	   if(isClick[id]==1){
+		   if(ima3[id].equals("aixin")){
+	            x=Integer.parseInt(text4[arg2]);	 
+	            x--;
+	      }
+	      else{
+	    	  x=Integer.parseInt(text4[arg2]);	 
+		      x++;
+	      }
+	      iv.setImageDrawable(getResources().getDrawable(getResources().getIdentifier(ima3[id],"drawable", getPackageName())));
+	      String y=Integer.toString(x);
+	      text4[arg2]=y;
+	      tx.setText(text4[arg2]); 
+//	      text1[arg2]=ima3[arg2];
+//          t1.setText(text1[arg2]);
+
+	      isClick[id]=0;
+	   }
+	   else{
+	      Intent inten=new Intent();
+	      inten.putExtra("image", ima[id]);
+	      inten.setClass(dy.this, dy_next.class);
+	      startActivity(inten);
+	   }
+	   }	
+	});
+	}
+
+}
+

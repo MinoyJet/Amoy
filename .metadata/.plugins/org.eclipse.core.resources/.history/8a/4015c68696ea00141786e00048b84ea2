@@ -1,0 +1,34 @@
+package com.example.beta5;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+
+public class zhuce extends Activity {
+	private EditText mUser; // ÕÊºÅ±à¼­¿ò
+	private EditText mPassword; // ÃÜÂë±à¼­¿ò
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.zhuce);
+        
+     
+}
+    
+    
+    
+    public void zhucu_back(View v) {     //±êÌâÀ¸ ·µ»Ø°´Å¥
+      	this.finish();
+      }  
+    
+    public void zhucu_in(View v) {     //±êÌâÀ¸ ·µ»Ø°´Å¥
+    	Intent intent = new Intent();
+		 intent.putExtra("msg", "µã»÷Ğ¡ºìÆì£¬µãÁÁ¹ÄÀËÓì£¡(*^__^*) ÎûÎû¡­¡­");
+
+        intent.setClass(zhuce.this,MainActivity.class);
+        startActivity(intent);
+      }  
+}

@@ -1,0 +1,30 @@
+package com.example.beta5;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
+public class gz  extends Activity{
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.gz);
+		
+	}
+	public void saoma(View v) {  
+      	Intent intent = new Intent();
+	//intent.setClass(gz.this,CaptureActivity.class);
+		//startActivity(intent);
+		//this.finish();
+      } 
+}
+
+
+
+
+
+
+
+
